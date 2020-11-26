@@ -1,0 +1,11 @@
+batch_size = 32
+checkpoint_interval = 1
+experiment_name = "roberta-base-aesw-32-1e-6"
+learning_rate = 1e-6
+max_epochs = 30
+model_name = "roberta-base"
+models_dir = "./models"
+test_file = "./data-unversioned/aesw/aesw-test.csv"
+tokenizer_name = "roberta-base"
+train_file = "./data-unversioned/aesw/aesw-train.csv"
+val_file = "./data-unversioned/aesw/aesw-dev.csv"
