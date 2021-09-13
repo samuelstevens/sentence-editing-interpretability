@@ -77,3 +77,28 @@ python -m paper.interpret.compare --all-models "This allows us to observe Saturn
 python -m paper.interpret.compare --all-models "(We'll represent a signature as an encrypted message digest):"
 python -m paper.interpret.compare --finetuning "The algorithm descripted in the previous sections has several advantages."
 ```
+
+## Citation
+
+If you use this software or data, please cite our paper and the original AESW paper:
+
+```
+@article{Stevens_An_Investigation_of,
+  author = {Stevens, Samuel and Su, Yu},
+  journal = {BlackboxNLP 2021},
+  title = {{An Investigation of Language Model Interpretability via Sentence Editing}}
+}
+
+@inproceedings{aesw,
+  title = {A Report on the Automatic Evaluation of Scientific Writing Shared Task},
+  author = {Daudaravicius, Vidas and Banchs, Rafael E. and Volodina, Elena and Napoles, Courtney},
+  booktitle = {Proceedings of the 11th Workshop on Innovative Use of {NLP} for Building Educational Applications},
+  month = jun,
+  year = {2016},
+  address = {San Diego, CA},
+  publisher = {Association for Computational Linguistics},
+  url = {https://www.aclweb.org/anthology/W16-0506},
+  doi = {10.18653/v1/W16-0506},
+  pages = {53--62}
+}
+```
