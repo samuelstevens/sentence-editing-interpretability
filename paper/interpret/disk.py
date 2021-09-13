@@ -5,6 +5,7 @@ from typing import List
 from .structures import Score
 
 INTERPRETABILITY_FOLDER = Path("./data-unversioned/attention-weights/")
+INTERPRETABILITY_FOLDER.mkdir(exist_ok=True)
 
 
 SCORES_FOLDER = INTERPRETABILITY_FOLDER / "scores"

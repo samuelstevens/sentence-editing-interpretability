@@ -99,10 +99,6 @@ six==1.15.0
 snakeviz==2.1.0
 soundex==1.1.3
 stanza==1.1.1
-tensorboard==2.2.0
-tensorboard-plugin-wit==1.7.0
-tensorflow==2.3.0
-tensorflow-estimator==2.3.0
 termcolor==1.1.0
 terminado==0.8.3
 testpath==0.4.4

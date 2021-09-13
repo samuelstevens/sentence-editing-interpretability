@@ -2,6 +2,10 @@
 
 This is the repo with code for reproducing results from "Understanding How BERT Learns to Identify Edits".
 
+## Data
+
+The rationales can be found in `data-versioned/rationales/*.json.gz`. Each example is one line and contains a single JSON example. `words` is a tokenized version of the sentence, ready to be fed to a BERT-based model. `best_words` is an un-ordered list of words that make up the rationale.
+
 ## Reproducing Results
 
 ### Environment
@@ -48,7 +52,7 @@ python -m paper ./experiments/bert_large_aesw_16_1e6/params.toml --inference-tes
 
 ### Interpretability
 
-1. Save attention weights for the two types of edits. This either requires a GPU or takes a long time (multiple hours).
+1. Save attention weights for the two types of edits. This either requires a GPU or takes a long time (multiple hours). You must also edit the `load_*()` functions in `paper/interpret/run.py` to specify which model you want to load.
 
 ```sh
 python -m paper.interpret --weight-types=spelling,delete

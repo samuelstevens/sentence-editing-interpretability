@@ -1,9 +1,11 @@
 """
 Find the correct edits. Also find the best word "mask": an index for the most important word according to the annotated data.
 """
+import json
+import pathlib
 import pickle
 import string
-from typing import List, NamedTuple, Set, Tuple
+from typing import Any, Dict, List, NamedTuple, Set, Tuple
 
 from lxml import etree
 from spellchecker import SpellChecker
@@ -20,6 +22,14 @@ class Edit(NamedTuple):
     sent: str
     words: List[str]
     best_words: Set[int]
+
+    def to_dict(self) -> Dict[str, Any]:
+        return {
+            "id": self.id,
+            "sent": self.sent,
+            "words": self.words,
+            "best_words": list(self.best_words),
+        }
 
 
 def is_single_comma_deleted(sent_elem: etree._Element) -> bool:
@@ -156,8 +166,23 @@ def extract_sentence_with_mask(sent_elem: etree._Element) -> Tuple[str, str]:
 
 
 def save_edits(edits: List[Edit], filename: str) -> None:
-    with open(disk.INTERPRETABILITY_FOLDER / filename, "wb") as file:
-        pickle.dump(edits, file)
+    filepath = pathlib.Path(filename)
+
+    if filepath.suffix == ".pckl":
+        pickle_name = filename
+        json_name = filepath.stem + ".json"
+    elif filepath.suffix == ".json":
+        json_name = filename
+        pickle_name = filepath.stem + ".pckl"
+    else:
+        raise ValueError(f"Filename '{filename}' must end in .json or .pckl")
+
+    with open(disk.INTERPRETABILITY_FOLDER / pickle_name, "wb") as pickle_file:
+        pickle.dump(edits, pickle_file)
+
+    with open(disk.INTERPRETABILITY_FOLDER / json_name, "w") as json_file:
+        for edit in edits:
+            json_file.write(json.dumps(edit.to_dict()) + "\n")
 
 
 def load_edits(filename: str) -> List[Edit]:

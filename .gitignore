@@ -54,3 +54,5 @@ Temporary Items
 .idea
 
 .ipynb_checkpoints
+
+*.swp
