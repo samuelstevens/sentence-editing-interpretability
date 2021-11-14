@@ -1,6 +1,6 @@
-# Understanding How BERT Learns to Identify Edits
+# An Investigation of Language Model Interpretability via Sentence Editing
 
-This is the repo with code for reproducing results from "Understanding How BERT Learns to Identify Edits".
+This is the repo with code for reproducing results from "An Investigation of Language Model Interpretability via Sentence Editing".
 
 ## Data
 
