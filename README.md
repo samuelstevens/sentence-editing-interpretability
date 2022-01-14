@@ -1,6 +1,6 @@
 # An Investigation of Language Model Interpretability via Sentence Editing
 
-This is the repo with code for reproducing results from "An Investigation of Language Model Interpretability via Sentence Editing".
+This is the repo with code for reproducing results from "An Investigation of Language Model Interpretability via Sentence Editing" ([Arxiv link](https://arxiv.org/abs/2011.14039))
 
 ## Data
 
